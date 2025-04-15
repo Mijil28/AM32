@@ -13,19 +13,11 @@
 //#define COMP_PA0 0b1100101
 //#define COMP_PA4 0b1000101
 //#define COMP_PA5 0b1010101
-  
- #ifdef HARDWARE_GROUP_F0_W
- // High speed comparator
- #define COMP_PA0 0b1100001
- #define COMP_PA1 0b1000001
- #define COMP_PA6 0b1010001
 
-#else
- // High speed comparator
+// High speed comparator
  #define COMP_PA0 0b1100001
  #define COMP_PA4 0b1000001
  #define COMP_PA5 0b1010001
-#endif
 
 #include "main.h"
 
