@@ -2431,10 +2431,6 @@
 #define PHASE_C_COMP COMP_CSR_COMP2EN  
 #endif
 
-#endif
-
-
-
 /************************************* G071 Hardware Groups
  * **********************************/
 
