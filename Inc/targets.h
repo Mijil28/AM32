@@ -2429,6 +2429,9 @@
 #define PHASE_C_GPIO_HIGH LL_GPIO_PIN_10
 #define PHASE_C_GPIO_PORT_HIGH GPIOA
 
+#undef COMP_PA4
+#undef COMP_PA5
+
 #define PHASE_A_COMP COMP_PA0 // pa0         
 #define PHASE_B_COMP COMP_PA1 // pa1
 #define PHASE_C_COMP COMP_PA6 // pa6
