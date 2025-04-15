@@ -1552,6 +1552,14 @@
 #endif
 
 
+#ifdef HW60A_PLAT_F051
+#define FILE_NAME "HW60A_PLAT_F051"
+#define FIRMWARE_NAME "HW PLATINUM V4"
+#define DEAD_TIME 20
+#define HARDWARE_GROUP_F0_W
+#define USE_SERIAL_TELEMETRY
+#endif
+
 /*******************************   G071 Targets
  * *********************************/
 
