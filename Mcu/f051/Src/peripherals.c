@@ -397,6 +397,20 @@ void UN_TIM_Init(void)
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 #endif
 
+#ifdef USE_TIMER_17_CHANNEL_1
+    LL_APB1_GRP2_EnableClock(LL_APB1_GRP2_PERIPH_TIM17);
+    LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
+    /** TIM17 GPIO Configuration
+        PB9   ------> TIM17_CH1
+    */
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_9;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+    GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+    GPIO_InitStruct.Alternate = LL_GPIO_AF_2;
+    LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+#endif
     /* TIM16 DMA Init */
 
     /* TIM16_CH1_UP Init */
