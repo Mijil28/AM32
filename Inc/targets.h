@@ -2398,7 +2398,7 @@
 #define PHASE_C_COMP COMP_PA0 // pa0
 #endif
 
-#ifdef HARDWARE_GROUP_F0_V
+#ifdef HARDWARE_GROUP_F0_W
 
 #define MCU_F051
 #define USE_TIMER_3_CHANNEL_4
