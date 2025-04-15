@@ -1559,6 +1559,8 @@
 #undef HSE_VALUE
 #define HSE_VALUE 8000000
 #define USE_SERIAL_TELEMETRY
+#define VOLTAGE_ADC_PIN LL_GPIO_PIN_7
+#define VOLTAGE_ADC_CHANNEL LL_ADC_CHANNEL_7
 #endif
 
 /*******************************   G071 Targets
