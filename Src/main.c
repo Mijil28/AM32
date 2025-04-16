@@ -823,7 +823,7 @@ void commutate()
     e_com_time = ((commutation_intervals[0] + commutation_intervals[1] + commutation_intervals[2] + commutation_intervals[3] + commutation_intervals[4] + commutation_intervals[5]) + 4) >> 1; // COMMUTATION INTERVAL IS 0.5US INCREMENTS
 
   #ifdef HARDWARE_GROUP_F0_W
-    #define PULSE_GPIO_PIN   GPIO_PINS_7
+    #define PULSE_GPIO_PIN   GPIO_PINS_9
   #else
     #define PULSE_GPIO_PIN   GPIO_PINS_8
   #endif
