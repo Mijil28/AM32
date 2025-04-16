@@ -1561,7 +1561,7 @@
 #define USE_SERIAL_TELEMETRY
 #define VOLTAGE_ADC_PIN LL_GPIO_PIN_7
 #define VOLTAGE_ADC_CHANNEL LL_ADC_CHANNEL_7
-#define USE_PULSE_OUT
+//#define USE_PULSE_OUT
 #endif
 
 /*******************************   G071 Targets
