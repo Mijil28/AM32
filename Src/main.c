@@ -822,17 +822,11 @@ void commutate()
     commutation_intervals[step - 1] = commutation_interval; // just used to calulate average
     e_com_time = ((commutation_intervals[0] + commutation_intervals[1] + commutation_intervals[2] + commutation_intervals[3] + commutation_intervals[4] + commutation_intervals[5]) + 4) >> 1; // COMMUTATION INTERVAL IS 0.5US INCREMENTS
 
-#ifdef HW60A_PLAT_F051
-    #define PULSE_GPIO_PIN   GPIO_PINS_7
-#else
-    #define PULSE_GPIO_PIN   GPIO_PINS_8
-#endif
-  
 #ifdef USE_PULSE_OUT
 		if(rising){
-			GPIOB->scr = PULSE_GPIO_PIN;
+			GPIOB->scr = GPIO_PINS_7;
 		}else{
-			GPIOB->clr = PULSE_GPIO_PIN;
+			GPIOB->clr = GPIO_PINS_7;
 		}
 #endif
 }
