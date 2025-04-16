@@ -17,7 +17,6 @@
 // #define BLPWR
 // #define HVFLYCOLOR
 // #define AM32REF_F051
-#define HW60A_PLAT_F051
 
 // #define G072ESC
 // #define G071ENABLE
