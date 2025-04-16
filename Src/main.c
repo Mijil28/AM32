@@ -825,7 +825,8 @@ void commutate()
 #ifdef USE_PULSE_OUT
 		if(rising){
 			GPIOB->scr = GPIO_PINS_8;
-		}else{
+		}
+    else{
 			GPIOB->clr = GPIO_PINS_8;
 		}
 #endif
