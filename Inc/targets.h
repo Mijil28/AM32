@@ -780,6 +780,7 @@
 #define RAMP_SPEED_LOW_RPM 1
 #define RAMP_SPEED_HIGH_RPM 1
 #define LOOP_FREQUENCY_HZ 20000
+#define PULSE_GPIO_PIN GPIO_PIN_8
 #endif
 
 #ifdef TBS_12S_F415
@@ -798,6 +799,7 @@
 #define LOOP_FREQUENCY_HZ 20000
 #define PA6_VOLTAGE
 #define EEPROM_START_ADD (uint32_t)0x0801F800
+#define PULSE_GPIO_PIN GPIO_PIN_8
 #endif
 
 #ifdef TBS_12S_F415_CAN
@@ -819,6 +821,7 @@
 #define LOOP_FREQUENCY_HZ 20000
 #define PA6_VOLTAGE
 #define EEPROM_START_ADD (uint32_t)0x0801F800
+#define PULSE_GPIO_PIN GPIO_PIN_8
 #endif
 
 #ifdef AIKON_SINGLE_F421
@@ -1561,8 +1564,8 @@
 #define USE_SERIAL_TELEMETRY
 #define VOLTAGE_ADC_PIN LL_GPIO_PIN_7
 #define VOLTAGE_ADC_CHANNEL LL_ADC_CHANNEL_7
+#define PULSE_GPIO_PIN GPIO_PINS_7
 #define USE_PULSE_OUT
-//#define PULSE_GPIO_PIN GPIO_PINS_7
 #endif
 
 /*******************************   G071 Targets
