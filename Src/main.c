@@ -824,11 +824,11 @@ void commutate()
 
 #ifdef USE_PULSE_OUT
 		if(rising){
-			GPIOB->scr = GPIO_PIN_8;
-      //GPIOB->BSRR = GPIO_PIN_8;
+			//GPIOB->scr = GPIO_PIN_8;
+      GPIOB->BSRR = GPIO_PIN_8;
 		}else{
-			GPIOB->clr = GPIO_PIN_8;
-      //GPIOB->BRR = GPIO_PIN_8;
+			//GPIOB->clr = GPIO_PIN_8;
+      GPIOB->BRR = GPIO_PIN_8;
 		}
 #endif
 }
