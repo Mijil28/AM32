@@ -2429,9 +2429,13 @@
 #define PHASE_C_GPIO_PORT_LOW GPIOB
 #define PHASE_C_GPIO_HIGH LL_GPIO_PIN_10
 #define PHASE_C_GPIO_PORT_HIGH GPIOA
+//COMPARATOR
+#define COMP_PA0 0b1100001
+#define COMP_PA1 0b1000001
+#define COMP_PA6 0b1010001
 
-#undef COMP_PA4
-#undef COMP_PA5
+#undef COMP_PA4 0b1000001
+#undef COMP_PA5 0b1010001
 
 #define PHASE_A_COMP COMP_PA0 // pa0         
 #define PHASE_B_COMP COMP_PA1 // pa1
@@ -3700,8 +3704,8 @@
 #define COM_TIMER_IRQ TIM14_IRQn
 #define DSHOT_PRIORITY_THRESHOLD 120
 // High speed comparator
-#define COMP_PA1 0b1000001
-#define COMP_PA6 0b1010001
+//#define COMP_PA1 0b1000001
+//#define COMP_PA6 0b1010001
 
   // High speed comparator
 #define COMP_PA0 0b1100001
