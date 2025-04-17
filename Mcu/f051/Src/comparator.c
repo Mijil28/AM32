@@ -16,7 +16,7 @@ uint8_t getCompOutputLevel() { return LL_COMP_ReadOutputLevel(active_COMP); }
 void maskPhaseInterrupts()
 {
   EXTI->IMR &= ~(1 << 21);
-  EXTI->PR = EXTI_LINE;
+  LL_EXTI_ClearFlag_0_31(EXTI_LINE);
 }
 
 void enableCompInterrupts() { EXTI->IMR |= (1 << 21); }
