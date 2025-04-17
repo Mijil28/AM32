@@ -23,10 +23,11 @@
  #include "stm32f0xx_it.h"
  
  #include "main.h"
- #include "comparator.h"
+ /* Private includes
+  * ----------------------------------------------------------*/
+ /* USER CODE BEGIN Includes */
  #include "ADC.h"
  #include "targets.h"
- #include "common.h"
  
  extern void transfercomplete();
  extern void PeriodElapsedCallback();
@@ -42,6 +43,7 @@
  extern char dshot_telemetry;
  extern char armed;
  extern char out_put;
+ extern char compute_dshot_flag;
  /* USER CODE END EV */
  
  uint16_t interrupt_time = 0;
@@ -87,16 +89,16 @@
  /**
   * @brief This function handles DMA1 channel 2 and 3 interrupts.
   */
- //void DMA1_Channel2_3_IRQHandler(void)
- //{
- //    if (LL_DMA_IsActiveFlag_TC2(DMA1)) {
- //        LL_DMA_ClearFlag_GI2(DMA1);
- //        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_2);
- //    } else if (LL_DMA_IsActiveFlag_TE2(DMA1)) {
- //        LL_DMA_ClearFlag_GI2(DMA1);
- //        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_2);
- //    }
- //}
+ void DMA1_Channel2_3_IRQHandler(void)
+ {
+     if (LL_DMA_IsActiveFlag_TC2(DMA1)) {
+         LL_DMA_ClearFlag_GI2(DMA1);
+         LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_2);
+     } else if (LL_DMA_IsActiveFlag_TE2(DMA1)) {
+         LL_DMA_ClearFlag_GI2(DMA1);
+         LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_2);
+     }
+ }
  
  /**
   * @brief This function handles DMA1 channel 4 and 5 interrupts.
@@ -191,17 +193,11 @@
   */
  void ADC1_COMP_IRQHandler(void)
  {
-   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_21) != RESET) {
-       if((INTERVAL_TIMER->CNT) > ((average_interval>>1))){
- EXTI->PR = EXTI_LINE;
-       interruptRoutine();
-   }else{ 
-       if (getCompOutputLevel() == rising){
-EXTI->PR = EXTI_LINE;
-
-  }
- }
- }
+     if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_21) != RESET) {
+         LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_21);
+         interruptRoutine();
+     }
+     //
  }
  
  /**
