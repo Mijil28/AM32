@@ -823,6 +823,22 @@ void commutate()
     e_com_time = ((commutation_intervals[0] + commutation_intervals[1] + commutation_intervals[2] + commutation_intervals[3] + commutation_intervals[4] + commutation_intervals[5]) + 4) >> 1; // COMMUTATION INTERVAL IS 0.5US INCREMENTS
 
 #ifdef USE_PULSE_OUT
+  #ifdef AT32F415
+    if(rising){
+        GPIOB->scr = GPIO_PINS_8;
+    } else {
+        GPIOB->clr = GPIO_PINS_8;
+    }
+  #else
+    if(rising){
+        GPIOB->BSRR = GPIO_PIN_8;
+    } else {
+        GPIOB->BRR = GPIO_PIN_8;
+    }
+  #endif
+#endif
+ /* 
+#ifdef USE_PULSE_OUT
 		if(rising){
 			GPIOB->scr = GPIO_PINS_8;
       //GPIOB->BSRR = GPIO_PIN_7;
@@ -830,7 +846,7 @@ void commutate()
 			GPIOB->clr = GPIO_PINS_8;
       //GPIOB->BRR = GPIO_PIN_7;
 		}
-#endif
+#endif */
 }
 
 void PeriodElapsedCallback()
